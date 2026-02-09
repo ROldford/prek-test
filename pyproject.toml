@@ -1,0 +1,21 @@
+[project]
+name = "prek_test"
+version = "0.1.0"
+description = "A test project for prek"
+authors = [
+    { name = "Ryan Oldford", email = "ryan.oldford@berlinguettegroup.com" }
+]
+dependencies = [
+    "pydantic>=2.12.0",
+    "polars>=1.38.0",
+    "loguru>=0.7.3",
+]
+
+[dependency-groups]
+dev = [
+    "commitizen>=4.13.7",
+    "prek>=0.3.1",
+    "ruff>=0.15.0",
+    "ty>=0.0.15",
+]
+
