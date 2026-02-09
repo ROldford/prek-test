@@ -1,0 +1,36 @@
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v6.0.0
+  hooks:
+  - id: check-case-conflict
+  - id: check-illegal-windows-names
+  - id: check-merge-conflict
+  - id: check-toml
+  - id: check-yaml
+  - id: end-of-file-fixer
+  - id: mixed-line-ending
+    args: [ --fix=lf ]
+  - id: name-tests-test
+    args: [ --pytest ]
+  # - id: no-commit-to-branch
+  - id: pretty-format-json
+    args: [ --indent=2, --autofix ]
+  - id: requirements-txt-fixer
+  - id: trailing-whitespace
+    args: [ --markdown-linebreak-ext=md ]
+- repo: https://github.com/commitizen-tools/commitizen
+  rev: v4.13.7
+  hooks:
+  - id: commitizen
+    args: [ --message-length-limit, "80" ]
+    stages: [ commit-msg ]
+  - id: commitizen-branch
+    stages: [ pre-push ]
+- repo: https://github.com/astral-sh/ruff-pre-commit
+  rev: v0.15.0
+  hooks:
+  - id: ruff-check
+    types_or: [ python, pyi ]
+    args: [ --fix ]
+  - id: ruff-format
+    types_or: [ python, pyi ]
