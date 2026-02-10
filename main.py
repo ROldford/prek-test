@@ -6,6 +6,8 @@ from src.polars_test import main as polars_main
 
 
 def main():
+    logger.info("Now running main() in main.py")
+
     result = do_thing(1.5, 2.5, "The result is:")
     logger.info(result)
 
